@@ -287,7 +287,7 @@ header {
             }
 
             #operation, #equal {
-                color: var(--jewel-tone);
+                color: var(--white);
                 font-size: 3rem;
                 text-shadow: 2px 2px 0 var(--accent-color-1);
             }
@@ -464,10 +464,13 @@ header {
     gap: 2rem;
     margin: 1rem 0;
     flex-wrap: wrap;
+    padding-bottom: 1rem;
 }
 
 .score {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 2rem;
     font-family: var(--font-special);
     font-size: 1.2rem;
@@ -481,6 +484,7 @@ header {
     gap: 0.5rem;
     font-weight: bolder;
     letter-spacing: 0.1em;
+    font-size: 2rem;
     text-shadow: 
     2px 2px 0 var(--accent-color-1),
     -1px -1px 0 var(--accent-color-1),
@@ -494,7 +498,6 @@ header {
     align-items: center;
     color: var(--white);
     font-weight: bold;
-    font-size: 1.5rem;
 }
 
 #wrong-score {
@@ -502,12 +505,11 @@ header {
     align-items: center;
     color: var(--mustard-tone);
     font-weight: bold;
-    font-size: 1.5rem;
 }
 
 .btn-clear {
     font-family: var(--font-text);
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     padding: 0.5rem 1rem;
