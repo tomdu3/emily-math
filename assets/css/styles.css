@@ -335,10 +335,6 @@ header {
                 }
             }
 
-            .hidden {
-                display: none;
-            }
-
             .wrong {
                 animation: shake 0.5s ease-in-out;
                 text-decoration: line-through;
@@ -464,7 +460,7 @@ header {
     gap: 2rem;
     margin: 1rem 0;
     flex-wrap: wrap;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
 }
 
 .score {
@@ -606,4 +602,8 @@ footer {
     100% {
         left: 200%;
     }
+}
+
+.hidden {
+    display: none;
 }

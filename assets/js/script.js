@@ -8,7 +8,12 @@ const result = document.querySelector('#result');
 const correctScore = document.querySelector('#correct-score');
 const wrongScore = document.querySelector('#wrong-score');
 const clearScoreBtn = document.querySelector('#clear-score');
+const paragraph = document.querySelector('.hero p');
+
+// disable and hide check button
 checkBtn.disabled = true;
+checkBtn.classList.add('hidden');
+
 let currentResult = 0;
 
 let scoreState = {
@@ -56,7 +61,14 @@ startBtn.addEventListener('click', () => {
     else {
         [num1, num2, res, op] = subtractTwoNumbers();
     }
+
+    // Show check button
+    checkBtn.classList.remove('hidden');
     checkBtn.disabled = false;
+
+    // Remove paragraph
+    paragraph.innerHTML = '&nbsp; ';
+
     number1.innerHTML = num1;
     number2.innerHTML = num2;
     operation.innerHTML = op;
