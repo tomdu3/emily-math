@@ -195,5 +195,4 @@ function createHearts() {
 
 document.addEventListener('DOMContentLoaded', () => {
     loadScores();
-    // ... rest of your DOMContentLoaded code ...
 });

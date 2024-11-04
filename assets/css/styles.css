@@ -256,7 +256,7 @@ header {
     }
 
     #game-field {
-        margin-top: 3rem;
+        margin-top: 2rem;
         padding: 2rem;
         background-color: rgba(106, 154, 77, 0.2);
         border-radius: 15px;
@@ -512,5 +512,53 @@ header {
         transform: translateY(2px);
         box-shadow: 0 2px 0 var(--primary-color);
         background-color: var(--accent-color-1);
+    }
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 0;
+    font-family: var(--font-special);
+    font-size: 1.2rem;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.1) 20%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.1) 80%,
+        transparent
+    );
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    
+    p, a {
+        color: var(--white);
+        text-shadow: 
+            2px 2px 0 var(--accent-color-1),
+            -1px -1px 0 var(--accent-color-1),
+            1px -1px 0 var(--accent-color-1),
+            -1px 1px 0 var(--accent-color-1),
+            0 0 8px rgba(0, 0, 0, 0.5);
+        font-weight: 600;
+        letter-spacing: 0.1em;
+    }
+
+    a {
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            color: var(--jewel-tone);
+            transform: scale(1.2);
+            text-shadow: 
+                2px 2px 0 var(--accent-color-2),
+                -1px -1px 0 var(--accent-color-2),
+                1px -1px 0 var(--accent-color-2),
+                -1px 1px 0 var(--accent-color-2),
+                0 0 15px var(--jewel-tone);
+        }
     }
 }
