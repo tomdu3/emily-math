@@ -178,9 +178,9 @@ header {
     width: 60%;
     margin: .5rem auto;
     padding: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(100, 100, 100, 0.1);
     backdrop-filter: blur(8px);
     text-align: center;
 
@@ -189,14 +189,17 @@ header {
         font-size: 3.5rem;
         color: var(--accent-color-1);
         margin-bottom: 1rem;
-        text-shadow: 3px 3px 0px var(--jewel-tone);
+        text-shadow: 3px 3px 0px var(--secondary-color);
         animation: bounce 2s infinite;
     }
 
     p {
         font-family: var(--font-decorative);
-        font-size: 1.8rem;
-        color: var(--earth-tone);
+        font-size: 2rem;
+        font-weight: bold;
+        letter-spacing: 0.2em;
+        text-shadow: 2px 2px 2px var(--accent-color-1);
+        color: var(--white);
         margin-bottom: 2rem;
     }
 
@@ -474,6 +477,7 @@ header {
 
 .score span {
     display: flex;
+    align-items: center;
     gap: 0.5rem;
     font-weight: bolder;
     letter-spacing: 0.1em;
@@ -486,27 +490,35 @@ header {
 }
 
 #correct-score {
-    color: var(--jewel-tone);
+    display: flex;
+    align-items: center;
+    color: var(--white);
     font-weight: bold;
+    font-size: 1.5rem;
 }
 
 #wrong-score {
+    display: flex;
+    align-items: center;
     color: var(--mustard-tone);
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .btn-clear {
     font-family: var(--font-text);
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 1.2rem;
+    font-weight: 700;
     letter-spacing: 0.1em;
     padding: 0.5rem 1rem;
     border-radius: 12px;
     border: none;
     background-color: var(--jewel-tone);
+    text-shadow: 1px 1px 0 var(--black);
     color: var(--white);
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 1px 4px 0 var(--primary-color);
+    box-shadow: 2px 4px 1px var(--secondary-color);
 
     &:hover {
         transform: translateY(2px);
