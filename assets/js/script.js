@@ -37,7 +37,14 @@ resultInput.addEventListener('keypress', (e) => {
 });
 
 function checkResult() {
+    // Check if input is empty or only whitespace
+    if (!resultInput.value.trim()) {
+        return; // Exit the function if input is empty
+    }
+
     const userResult = parseInt(resultInput.value);
+    
+
     if (userResult === currentResult) {
         // Correct answer
         createFireworks();
