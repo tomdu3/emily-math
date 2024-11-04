@@ -48,17 +48,34 @@ header {
         width: 80px;
         height: 80px;
         border-radius: 50%;
-        border: 2px solid var(--neutral-color);
-        background-color: rgba(48, 199, 198, 0.7);
+        border: 3px solid var(--white);
+        background: linear-gradient(135deg, var(--accent-color-1), var(--jewel-tone));
+        box-shadow: 
+            0 0 15px rgba(255, 255, 255, 0.3),
+            inset 0 0 15px rgba(255, 255, 255, 0.3);
         align-items: center;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: rotate(45deg) scale(1.05);
+            box-shadow: 
+                0 0 20px rgba(255, 255, 255, 0.5),
+                inset 0 0 20px rgba(255, 255, 255, 0.5);
+            cursor: default;
+            }
 
         p {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: bolder;
             letter-spacing: 0.1em;
             padding: 20px 0;
-            color: var(--light-touch-color);
-            text-shadow: 3px 2px 4px rgba(0, 0, 0, 0.6);
+            color: var(--white);
+            text-shadow: 
+                2px 2px 0 var(--accent-color-2),
+                -1px -1px 0 var(--accent-color-2),
+                1px -1px 0 var(--accent-color-2),
+                -1px 1px 0 var(--accent-color-2),
+                0 0 8px rgba(0, 0, 0, 0.5);
             margin: 0 auto;
             text-align: center;
         }
