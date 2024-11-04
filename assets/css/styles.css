@@ -340,10 +340,27 @@ header {
                 animation: shake 0.5s ease-in-out;
                 text-decoration: line-through;
                 color: red !important;
+                transition: all 0.5s ease;
             }
 
             .correct {
                 animation: pop 0.5s ease-in-out;
+            }
+
+            #result {
+                transition: all 0.5s ease;
+                opacity: 1;
+                transform: translateX(0);
+                width: auto;
+                overflow: hidden;
+            }
+
+            .hidden {
+                opacity: 0 !important;
+                transform: translateX(-20px) !important;
+                width: 0 !important;
+                padding: 0 !important;
+                margin: 0 !important;
             }
         }
     }
@@ -409,24 +426,6 @@ header {
     100% { transform: scale(1); }
 }
 
-/* Fireworks animation */
-.firework {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 9999;
-    animation: firework-fade 2s ease-out forwards;
-}
-
-@keyframes firework-fade {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
 /* Add these new styles */
 @keyframes heartbeat {
     0% {
@@ -453,4 +452,65 @@ header {
     font-size: 2rem;
     color: var(--accent-color-1);
     animation: heartbeat 1s ease-out forwards;
+}
+
+.score-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.score {
+    display: flex;
+    gap: 2rem;
+    font-family: var(--font-special);
+    font-size: 1.2rem;
+    color: var(--white);
+    text-shadow: 2px 2px 0 var(--accent-color-1);
+}
+
+.score span {
+    display: flex;
+    gap: 0.5rem;
+    font-weight: bolder;
+    letter-spacing: 0.1em;
+    text-shadow: 
+    2px 2px 0 var(--accent-color-1),
+    -1px -1px 0 var(--accent-color-1),
+    1px -1px 0 var(--accent-color-1),
+    -1px 1px 0 var(--accent-color-1),
+    0 0 8px rgba(0,0,0,0.5);
+}
+
+#correct-score {
+    color: var(--jewel-tone);
+    font-weight: bold;
+}
+
+#wrong-score {
+    color: var(--mustard-tone);
+}
+
+.btn-clear {
+    font-family: var(--font-text);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--jewel-tone);
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 1px 4px 0 var(--primary-color);
+
+    &:hover {
+        transform: translateY(2px);
+        box-shadow: 0 2px 0 var(--primary-color);
+        background-color: var(--accent-color-1);
+    }
 }

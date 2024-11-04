@@ -1,14 +1,52 @@
-const start = document.querySelector('#start');
+const startBtn = document.querySelector('#start');
 const number1 = document.querySelector('#num1');
 const number2 = document.querySelector('#num2');
 const operation = document.querySelector('#operation');
 const resultInput = document.querySelector('#result-input');
 const checkBtn = document.querySelector('#check-btn');
 const result = document.querySelector('#result');
+const correctScore = document.querySelector('#correct-score');
+const wrongScore = document.querySelector('#wrong-score');
+const clearScoreBtn = document.querySelector('#clear-score');
 checkBtn.disabled = true;
 let currentResult = 0;
 
-start.addEventListener('click', () => {
+let scoreState = {
+    correct: 0,
+    wrong: 0
+};
+
+function loadScores() {
+    const savedScores = localStorage.getItem('mathGameScores');
+    if (savedScores) {
+        scoreState = JSON.parse(savedScores);
+        updateScoreDisplay();
+    }
+}
+
+function saveScores() {
+    localStorage.setItem('mathGameScores', JSON.stringify(scoreState));
+}
+
+function updateScoreDisplay() {
+    correctScore.textContent = scoreState.correct;
+    wrongScore.textContent = scoreState.wrong;
+}
+
+function clearScores() {
+    scoreState.correct = 0;
+    scoreState.wrong = 0;
+    saveScores();
+    updateScoreDisplay();
+    startBtn.textContent = 'Start';
+    setTimeout(() => {
+        window.location.reload();
+    }, 200);
+}
+
+clearScoreBtn.addEventListener('click', clearScores);
+
+startBtn.addEventListener('click', () => {
     let selectOperation, num1, num2, res, op;
     selectOperation = Math.floor(Math.random() * 2);
 
@@ -27,6 +65,10 @@ start.addEventListener('click', () => {
     resultInput.value = '';
     resultInput.classList.remove('wrong');
     result.classList.add('hidden');
+
+    if (startBtn.textContent === 'Start') {
+        startBtn.textContent = 'Next';
+    }
 });
 
 checkBtn.addEventListener('click', checkResult);
@@ -44,10 +86,9 @@ function checkResult() {
 
     const userResult = parseInt(resultInput.value);
     
-
     if (userResult === currentResult) {
         // Correct answer
-        createFireworks();
+        scoreState.correct++;
         createHearts();
         resultInput.classList.add('correct');
         setTimeout(() => {
@@ -55,47 +96,18 @@ function checkResult() {
         }, 500);
     } else {
         // Wrong answer
+        scoreState.wrong++;
         resultInput.classList.add('wrong');
         setTimeout(() => {
             result.classList.remove('hidden');
             result.classList.add('correct');
         }, 1000);
     }
+    saveScores();
+    updateScoreDisplay();
     checkBtn.disabled = true;
 }
 
-function createFireworks() {
-    const firework = document.createElement('div');
-    firework.className = 'firework';
-    
-    // Create multiple particles
-    for (let i = 0; i < 50; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        const angle = (i / 50) * 360;
-        const speed = 5 + Math.random() * 5;
-        
-        particle.style.cssText = `
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 4px;
-            height: 4px;
-            background: ${getRandomColor()};
-            border-radius: 50%;
-            transform-origin: 0 0;
-            animation: particle 1s ease-out forwards;
-            transform: rotate(${angle}deg) translateX(10px);
-        `;
-        
-        firework.appendChild(particle);
-    }
-    
-    document.body.appendChild(firework);
-    setTimeout(() => {
-        document.body.removeChild(firework);
-    }, 2000);
-}
 
 function getRandomColor() {
     const colors = ['#ff0', '#f0f', '#0ff', '#f00', '#0f0', '#00f'];
@@ -116,6 +128,7 @@ style.textContent = `
         }
     }
 `;
+
 document.head.appendChild(style);
 
 function generateTwoNumbers() {
@@ -179,3 +192,8 @@ function createHearts() {
         }, 1000);
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadScores();
+    // ... rest of your DOMContentLoaded code ...
+});
