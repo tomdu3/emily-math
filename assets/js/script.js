@@ -96,6 +96,9 @@ function checkResult() {
         return; // Exit the function if input is empty
     }
 
+    // Hide the check button
+    checkBtn.classList.add('hidden');
+
     const userResult = parseInt(resultInput.value);
     
     if (userResult === currentResult) {
@@ -120,6 +123,16 @@ function checkResult() {
     checkBtn.disabled = true;
 }
 
+// Add event listener for input changes to show the button
+resultInput.addEventListener('input', () => {
+    if (resultInput.value.trim()) {
+        checkBtn.classList.remove('hidden');
+        checkBtn.disabled = false;
+    } else {
+        checkBtn.classList.add('hidden');
+        checkBtn.disabled = true;
+    }
+});
 
 function getRandomColor() {
     const colors = ['#ff0', '#f0f', '#0ff', '#f00', '#0f0', '#00f'];
