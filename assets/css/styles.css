@@ -631,79 +631,85 @@ footer {
     display: none;
 }
 
-/* Add media query for responsiveness */
+/* Media Queries */
 @media (max-width: 1024px) {
-    #hero {
+    /* Hero Section */
+    .hero {
         padding: 0;
+        
         p {
             display: none;
         }
+    }
 
-        #game-field {
-            padding: 0;
+    /* Game Field */
+    #game-field {
+        padding: 0;
+
+        .result-container {
+            flex-direction: row !important;
         }
     }
+
+    /* Task Section */
     #task {
         gap: 0 !important;
-        
-            flex-direction: column !important;
-            #calculation, #equal, #result {
-                margin: 0;
-                padding: 0;
-            }
-    
-            .result-container {
-                width: 100px;
-                padding: .8rem;
-            }
-            
-            .result-field {
-                width: 60px;
-            }
+        flex-direction: column !important;
 
-    }
+        #calculation, 
+        #equal, 
+        #result {
+            margin: 0;
+            padding: 0;
+        }
 
-    #game-field {
         .result-container {
-                flex-direction: row !important;
-            }
+            width: 100px;
+            padding: .8rem;
+        }
+        
+        .result-field {
+            width: 60px;
+        }
     }
 }
 
 @media (max-width: 768px) {
-
+    /* Header */
     header {
         #logo {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        border: 1px solid var(--white);
-    
-    
-        p {
-            font-size: 1rem;
-            font-weight: bold;
-            letter-spacing: 0.1em;
-            padding: 5px 0 !important;
-            color: var(--white);
-            text-shadow: 
-                2px 2px 0 var(--accent-color-2),
-                -1px -1px 0 var(--accent-color-2),
-                1px -1px 0 var(--accent-color-2),
-                -1px 1px 0 var(--accent-color-2),
-                0 0 8px rgba(0, 0, 0, 0.5);
-            margin: 0 auto;
-            text-align: center;
-        }}
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid var(--white);
+
+            p {
+                font-size: 1rem;
+                font-weight: bold;
+                letter-spacing: 0.1em;
+                padding: 5px 0 !important;
+                color: var(--white);
+                text-shadow: 
+                    2px 2px 0 var(--accent-color-2),
+                    -1px -1px 0 var(--accent-color-2),
+                    1px -1px 0 var(--accent-color-2),
+                    -1px 1px 0 var(--accent-color-2),
+                    0 0 8px rgba(0, 0, 0, 0.5);
+                margin: 0 auto;
+                text-align: center;
+            }
+        }
+
         nav {
             padding-top: 10px;
         }
-}
+    }
 
     #nav-desktop {
         display: none;
     }
 
+    /* Hero Section */
     .hero {
         width: 90%;
         padding: 1rem;
@@ -715,50 +721,55 @@ footer {
         p {
             display: none;
         }
+
+        /* Game Field */
         #game-field {
             padding: 0;
             margin-top: 10px;
-        }
 
-        #game-field #task {
-            flex-direction: column;
-            gap: 0;
-            
-            /* Container for first row */
-            .calculation {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 0.8rem;
-            }
-
-            div {
-                font-size: 1.5rem;
-                padding: 0.8rem;
-                min-width: 45px;
-            }
-
-            #operation, #equal {
-                font-size: 1.5rem;
-            }
-
-            #equal {
-                margin: 0.5rem 0;
-            }
-
-            .result-container {
-                width: 160px;
-                display: flex;
+            /* Task Section */
+            #task {
                 flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-            
-            .result-field {
-                width: 60px;
+                gap: 0;
+                
+                .calculation {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 0.8rem;
+                }
+
+                div {
+                    font-size: 1.5rem;
+                    padding: 0.8rem;
+                    min-width: 45px;
+                }
+
+                #operation, 
+                #equal {
+                    font-size: 1.5rem;
+                }
+
+                #equal {
+                    margin: 0.5rem 0;
+                }
+
+                .result-container {
+                    width: 160px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1rem;
+                }
+                
+                .result-field {
+                    width: 60px;
+                    font-size: 1.5rem !important;
+                }
             }
         }
-        
+
+        /* Score Section */
         .score-container {
             flex-direction: column;
             margin: 0;
@@ -773,34 +784,17 @@ footer {
             padding: 0;
         }
 
+        /* Buttons */
         .btn-clear {
             font-size: 1.2rem;
-
         }
 
         #start {
             font-size: 1.2rem;
         }
-
-        #calculation, #equal, #result {
-            margin: 0;
-            padding: 0;
-        }
-
-        .result-container {
-            width: 100px;
-            padding: .8rem;
-        }
-        
-        .result-field {
-            width: 60px;
-            font-size: 1.5rem !important;
-        }
-
     }
 
     footer {
         font-size: .8rem;
     }
-    
 }
