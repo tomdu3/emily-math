@@ -31,6 +31,20 @@
     --font-special: 'Montserrat Alternates', sans-serif;
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .background-image {
     position: fixed;
     top: 0;
@@ -40,6 +54,8 @@
     z-index: -1;
     object-fit: cover;
 }
+
+/* navbar */
 
 header {
     #logo {
@@ -258,6 +274,7 @@ header {
         }
     }
 
+    /* Game Field */
     #game-field {
         margin-top: 2rem;
         padding: 2rem;
@@ -362,86 +379,12 @@ header {
                 padding: 0 !important;
                 margin: 0 !important;
             }
+        
         }
     }
 }
 
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-/* Add media query for responsiveness */
-@media (max-width: 768px) {
-    .hero {
-        width: 90%;
-        padding: 1rem;
-
-        h1 {
-            font-size: 2.5rem;
-        }
-
-        p {
-            font-size: 1.4rem;
-        }
-
-        #game-field #task {
-            gap: 0.8rem;
-            
-            div {
-                font-size: 2rem;
-                padding: 0.8rem;
-                min-width: 45px;
-            }
-
-            #operation, #equal {
-                font-size: 2.2rem;
-            }
-        }
-    }
-
-    .result-container {
-        width: 160px;
-    }
-    
-    .result-field {
-        width: 60px;
-    }
-}
-
-/* Add these new keyframe animations */
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    20%, 60% { transform: translateX(-5px); }
-    40%, 80% { transform: translateX(5px); }
-}
-
-@keyframes pop {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
-
-/* Add these new styles */
-@keyframes heartbeat {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.3);
-        opacity: 0.8;
-    }
-    100% {
-        transform: scale(1.6);
-        opacity: 0;
-    }
-}
-
+/* Heart Container */
 .heart-container {
     position: absolute;
     pointer-events: none;
@@ -453,6 +396,18 @@ header {
     color: var(--accent-color-1);
     animation: heartbeat 1s ease-out forwards;
 }
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Score Container */
 
 .score-container {
     display: flex;
@@ -542,6 +497,80 @@ header {
     }
 }
 
+
+/* Add media query for responsiveness */
+@media (max-width: 768px) {
+    .hero {
+        width: 90%;
+        padding: 1rem;
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.4rem;
+        }
+
+        #game-field #task {
+            gap: 0.8rem;
+            
+            div {
+                font-size: 2rem;
+                padding: 0.8rem;
+                min-width: 45px;
+            }
+
+            #operation, #equal {
+                font-size: 2.2rem;
+            }
+        }
+        
+        .score-container {
+            flex-direction: column;
+        }
+
+        .result-container {
+            width: 160px;
+        }
+        
+        .result-field {
+            width: 60px;
+        }
+
+    }
+    
+}
+
+/* Add these new keyframe animations */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Add these new styles */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+
 /* Footer */
 footer {
     display: flex;
@@ -562,8 +591,12 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     position: relative;
     overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    margin-top: auto;
     
-    p, a {
+    p {
+        margin: 0.5rem 0;
         color: var(--white);
         text-shadow: 
             2px 2px 0 var(--accent-color-1),
@@ -577,8 +610,16 @@ footer {
     }
 
     a {
+        color: var(--white);
         font-size: 1.5rem;
+        text-decoration: none;
         transition: all 0.3s ease;
+        text-shadow: 
+            2px 2px 0 var(--accent-color-1),
+            -1px -1px 0 var(--accent-color-1),
+            1px -1px 0 var(--accent-color-1),
+            -1px 1px 0 var(--accent-color-1),
+            0 0 8px rgba(0, 0, 0, 0.5);
         
         &:hover {
             color: var(--jewel-tone);
@@ -590,25 +631,6 @@ footer {
                 -1px 1px 0 var(--accent-color-2),
                 0 0 15px var(--jewel-tone);
         }
-    }
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 50%;
-        height: 100%;
-        background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.3),
-            rgba(255, 255, 255, 0.5),
-            rgba(255, 255, 255, 0.3),
-            transparent
-        );
-        transform: skewX(-25deg);
-        animation: footerBeam 5s linear infinite;
     }
 }
 
@@ -625,39 +647,3 @@ footer {
     display: none;
 }
 
-/* Add these rules to your CSS file */
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-}
-
-main {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-footer {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    margin-top: auto;
-}
-
-footer p {
-    margin: 0.5rem 0;
-}
-
-footer a {
-    color: white;
-    font-size: 1.5rem;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: #ccc;
-}
