@@ -22,7 +22,7 @@ let scoreState = {
 };
 
 let enterKeyEnabled = false;
-let checkButtonEnabled = true;
+let checkButtonEnabled = false;
 
 function loadScores() {
     const savedScores = localStorage.getItem('mathGameScores');
