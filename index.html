@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emily Mathe</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Satisfy&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="./assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="./assets/images/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="./assets/images/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="./assets/images/favicon/site.webmanifest" />
+</head>
+
+<body>
+    <picture class="background-image">
+        <source media="(max-width: 768px)" srcset="./assets/images/chat-game-bg-mobile.webp">
+        <img src="./assets/images/chat-game-bg.webp" alt="Math background" class="background-image">
+    </picture>
+
+    <header>
+        <nav>
+            <div id="logo">
+                <p>Mathe</p>
+            </div>
+            <ul id="nav-desktop">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">How to play</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Welcome to Mathe</h1>
+            <p>A fun and challenging math game for kids</p>
+            <div class="score-container">
+                <div class="score">
+                    <span>Correct: <span id="correct-score">0</span></span>
+                    <span>Wrong: <span id="wrong-score">0</span></span>
+                </div>
+                <button id="clear-score" class="btn-clear">Clear Score</button>
+            </div>
+            <a href="#" id="start" class="btn">Start</a>
+            <div id="game-field">
+                <div id="task">
+                    <div class="calculation">
+                        <div id="num1">10</div>
+                        <div id="operation">+</div>
+                        <div id="num2">20</div>
+                    </div>
+                    <div id="equal">=</div>
+                    <div class="result-container">
+                        <input type="number" id="result-input" placeholder="?" class="result-field" value="30">
+                        <button id="check-btn" class="btn-check">Check</button>
+                        <div id="result" class="hidden">30</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+     <footer>
+        <p>&copy;TDCode <span id="year"></span></p>
+        <p>Created for Emily Dukez</p>
+        <a href="https://github.com/tomdu3" target="_blank"><i class="fa-brands fa-github"></i></a>
+     </footer>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

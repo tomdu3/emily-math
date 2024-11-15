@@ -21,6 +21,8 @@ let scoreState = {
     wrong: 0
 };
 
+let enterKeyEnabled = false;
+
 function loadScores() {
     const savedScores = localStorage.getItem('mathGameScores');
     if (savedScores) {
@@ -52,6 +54,8 @@ function clearScores() {
 clearScoreBtn.addEventListener('click', clearScores);
 
 startBtn.addEventListener('click', () => {
+    enterKeyEnabled = true;
+
     let selectOperation, num1, num2, res, op;
     selectOperation = Math.floor(Math.random() * 2);
 
@@ -85,7 +89,7 @@ startBtn.addEventListener('click', () => {
 
 checkBtn.addEventListener('click', checkResult);
 resultInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && enterKeyEnabled) {
         checkResult();
     }
 });
@@ -95,6 +99,9 @@ function checkResult() {
     if (!resultInput.value.trim()) {
         return; // Exit the function if input is empty
     }
+
+    // Disable Enter key after checking result
+    enterKeyEnabled = false;
 
     // Hide the check button
     checkBtn.classList.add('hidden');
