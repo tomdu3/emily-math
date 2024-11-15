@@ -21,6 +21,9 @@ let scoreState = {
     wrong: 0
 };
 
+let enterKeyEnabled = false;
+let checkButtonEnabled = true;
+
 function loadScores() {
     const savedScores = localStorage.getItem('mathGameScores');
     if (savedScores) {
@@ -52,6 +55,10 @@ function clearScores() {
 clearScoreBtn.addEventListener('click', clearScores);
 
 startBtn.addEventListener('click', () => {
+    // Re-enable Enter key and check button for new question
+    enterKeyEnabled = true;
+    checkButtonEnabled = true;
+
     let selectOperation, num1, num2, res, op;
     selectOperation = Math.floor(Math.random() * 2);
 
@@ -85,7 +92,7 @@ startBtn.addEventListener('click', () => {
 
 checkBtn.addEventListener('click', checkResult);
 resultInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && enterKeyEnabled) {
         checkResult();
     }
 });
@@ -95,6 +102,10 @@ function checkResult() {
     if (!resultInput.value.trim()) {
         return; // Exit the function if input is empty
     }
+
+    // Disable Enter key and check button after checking result
+    enterKeyEnabled = false;
+    checkButtonEnabled = false;
 
     // Hide the check button
     checkBtn.classList.add('hidden');
@@ -125,7 +136,7 @@ function checkResult() {
 
 // Add event listener for input changes to show the button
 resultInput.addEventListener('input', () => {
-    if (resultInput.value.trim()) {
+    if (resultInput.value.trim() && checkButtonEnabled) {
         checkBtn.classList.remove('hidden');
         checkBtn.disabled = false;
     } else {
