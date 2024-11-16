@@ -576,7 +576,7 @@ footer {
             1px -1px 0 var(--accent-color-1),
             -1px 1px 0 var(--accent-color-1),
             0 0 8px rgba(0, 0, 0, 0.5);
-        font-weight: 600;
+        font-weight: 300;
         letter-spacing: 0.1em;
         position: relative;
     }
