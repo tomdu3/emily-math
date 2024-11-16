@@ -10,6 +10,9 @@ const wrongScore = document.querySelector('#wrong-score');
 const clearScoreBtn = document.querySelector('#clear-score');
 const paragraph = document.querySelector('.hero p');
 
+// Add this line near the top with other initial setup
+resultInput.readOnly = true;
+
 // disable and hide check button
 checkBtn.disabled = true;
 checkBtn.classList.add('hidden');
@@ -58,6 +61,9 @@ startBtn.addEventListener('click', () => {
     // Re-enable Enter key and check button for new question
     enterKeyEnabled = true;
     checkButtonEnabled = true;
+    
+    // Make input field editable again
+    resultInput.readOnly = false;
 
     let selectOperation, num1, num2, res, op;
     selectOperation = Math.floor(Math.random() * 2);
@@ -106,6 +112,9 @@ function checkResult() {
     // Disable Enter key and check button after checking result
     enterKeyEnabled = false;
     checkButtonEnabled = false;
+    
+    // Make input field readonly
+    resultInput.readOnly = true;
 
     // Hide the check button
     checkBtn.classList.add('hidden');
