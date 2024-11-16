@@ -10,7 +10,11 @@ const wrongScore = document.querySelector('#wrong-score');
 const clearScoreBtn = document.querySelector('#clear-score');
 const paragraph = document.querySelector('.hero p');
 
-// Add this line near the top with other initial setup
+// add current year to footer
+const year = document.querySelector('#year');
+year.textContent = new Date().getFullYear();
+
+// make result input field read only
 resultInput.readOnly = true;
 
 // disable and hide check button
@@ -241,3 +245,4 @@ function createHearts() {
 document.addEventListener('DOMContentLoaded', () => {
     loadScores();
 });
+
