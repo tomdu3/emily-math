@@ -58,6 +58,7 @@ main {
 /* navbar */
 
 header {
+    user-select: none;
     #logo {
         display: flex;
         font-family: var(--font-decorative);
@@ -191,6 +192,7 @@ header {
 /* Game Section */
 
 .hero {
+    user-select: none;
     width: 60%;
     margin: 0 auto;
     padding: 1.5rem;
@@ -391,6 +393,11 @@ header {
         
         }
     }
+}
+
+/* Prevent text selection in result input field */
+#result-input::selection {
+    user-select: none;
 }
 
 /* Heart Container */
