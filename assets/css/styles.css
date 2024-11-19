@@ -805,3 +805,64 @@ footer {
         font-size: .8rem;
     }
 }
+
+/* Tablet Landscape */
+@media (max-width: 1024px) and (orientation: landscape) {
+    nav {
+        padding-top: 10px;
+    }
+
+    .hero {
+        padding: 1rem;
+        
+        h1 {
+            font-size: 2rem;
+            margin: 1rem 0 0.5rem 0 !important;
+            
+        }
+    }
+
+    #game-field {
+        padding: 0.5rem;
+        
+        #task {
+            flex-direction: row !important;
+            justify-content: flex-start;
+            gap: 1rem !important;
+            
+            .calculation {
+                display: flex;
+                align-items: center;
+            }
+            
+            #calculation, 
+            #equal, 
+            #result {
+                margin: 0 0.2rem;
+            }
+            
+            .result-container {
+                width: 120px;
+            }
+        }
+    }
+
+    .score-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        margin: 0;
+    }
+
+    footer {
+        padding: 0.5rem 0;
+        
+        p {
+            font-size: 1rem;
+        }
+        
+        a {
+            font-size: 1.2rem;
+        }
+    }
+}
