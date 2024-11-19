@@ -812,6 +812,10 @@ footer {
         padding-top: 10px;
     }
 
+    main {
+        align-items: flex-start;
+    }
+    
     .hero {
         padding: 1rem;
         h1 {
