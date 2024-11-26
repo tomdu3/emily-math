@@ -9,6 +9,7 @@ const correctScore = document.querySelector('#correct-score');
 const wrongScore = document.querySelector('#wrong-score');
 const clearScoreBtn = document.querySelector('#clear-score');
 const paragraph = document.querySelector('.hero p');
+const changeTasksBtn = document.querySelector('#change-tasks');
 
 // add current year to footer
 const year = document.querySelector('#year');
