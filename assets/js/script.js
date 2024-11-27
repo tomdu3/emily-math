@@ -11,6 +11,26 @@ const clearScoreBtn = document.querySelector('#clear-score');
 const paragraph = document.querySelector('.hero p');
 const changeTasksBtn = document.querySelector('#change-tasks');
 
+// Dialog
+
+const taskDialog = document.querySelector('#task-dialog');
+let taskChoice = 0; // default value
+
+// Dialog functionality
+changeTasksBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    taskDialog.showModal();
+});
+
+// Handle task option selection
+taskDialog.addEventListener('click', (e) => {
+    if (e.target.classList.contains('task-option')) {
+        taskChoice = parseInt(e.target.dataset.task);
+        taskDialog.close();
+        console.log(taskChoice);
+    }
+});
+
 // add current year to footer
 const year = document.querySelector('#year');
 year.textContent = new Date().getFullYear();
