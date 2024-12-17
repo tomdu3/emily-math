@@ -936,3 +936,62 @@ footer {
 .task-option:hover {
   background-color: #e0e0e0;
 }
+
+/* temp styling for dialog */
+dialog {
+  .btn {
+    text-decoration: none;
+    color: var(--white);
+    font-family: var(--font-text);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-shadow:
+      2px 2px 0 var(--accent-color-1),
+      -1px -1px 0 var(--accent-color-1),
+      1px -1px 0 var(--accent-color-1),
+      -1px 1px 0 var(--accent-color-1),
+      0 0 8px rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+
+    &:hover {
+      opacity: 1;
+      color: var(--white);
+      background-color: rgba(255, 111, 97, 0.7);
+      border-color: var(--accent-color-1);
+      transform: translateY(-2px);
+      box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.3),
+        0 0 15px rgba(255, 111, 97, 0.5);
+      text-shadow:
+        2px 2px 0 var(--accent-color-2),
+        -1px -1px 0 var(--accent-color-2),
+        1px -1px 0 var(--accent-color-2),
+        -1px 1px 0 var(--accent-color-2),
+        0 0 8px rgba(0, 0, 0, 0.5);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 30px;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.8),
+          transparent
+        );
+        transform: translate(-50%, -50%) rotate(0deg);
+        animation: lightRay 1s linear infinite;
+      }
+    }
+  }
+}
+
