@@ -201,9 +201,9 @@ style.textContent = `
 
 document.head.appendChild(style);
 
-function generateTwoNumbers() {
-    let num1 = Math.floor(Math.random() * 99 + 1);
-    let num2 = Math.floor(Math.random() * 10+1);
+function generateTwoNumbers(topNum1=100, topNum2=10) {
+    let num1 = Math.floor(Math.random() * topNum1 + 1);
+    let num2 = Math.floor(Math.random() * topNum2+1);
 
     return [num1, num2];
 }
@@ -219,7 +219,7 @@ function addTwoNumbers() {
     return [num1, num2, res, op];
 }
 
-function subtractTwoNumbers() {
+function subtractTwoNumbers(level='easy') {
     let res = 0;
     let num1, num2, op;
     do {
@@ -229,6 +229,7 @@ function subtractTwoNumbers() {
     while (res < 0);
     return [num1, num2, res, op];
 }
+
 
 function createHearts() {
     const resultInput = document.querySelector('#result-input');
