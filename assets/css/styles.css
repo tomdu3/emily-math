@@ -1,30 +1,24 @@
 :root {
   /* Colours */
 
-  --primary-color: #b3a98b;
-  /* khaki */
-  --secondary-color: #dad3c0;
-  /* light cream */
+  --primary-color: #88B04B; /* Earthy Green */
+  --secondary-color: #F7C548; /* Sunny Yellow */
   --white: #fff;
   /* White */
-  --black: #000;
-  /* Black */
+  --black: #4A4A4A; /* Soft Black */
 
   --accent-color-1: #ff6f61;
   /* Coral */
-  --accent-color-2: #6a9a4d;
-  /* Olive Green */
+  --accent-color-2: #92A8D1; /* Dusty Blue */
   --neutral-color: #a1a1a1;
   /* Soft Gray */
-  --light-touch-color: #e6b3ff;
-  /* Lavender */
+  --light-touch-color: #92A8D1; /* Dusty Blue */
 
   --earth-tone: #d67e64;
   /* Terracotta */
   --jewel-tone: #30c7c6;
   /* Turquoise */
-  --mustard-tone: #ffd54f;
-  /* Mustard Yellow */
+  --mustard-tone: #F7C548; /* Sunny Yellow */
   /* Fonts */
   --font-text: "Roboto", sans-serif;
   --font-decorative: "Satisfy", cursive;
@@ -92,11 +86,11 @@ header {
       padding: 20px 0;
       color: var(--white);
       text-shadow:
-        2px 2px 0 var(--accent-color-2),
-        -1px -1px 0 var(--accent-color-2),
-        1px -1px 0 var(--accent-color-2),
-        -1px 1px 0 var(--accent-color-2),
-        0 0 8px rgba(0, 0, 0, 0.5);
+        1px 1px 2px var(--black),
+        -1px -1px 2px var(--black),
+        1px -1px 2px var(--black),
+        -1px 1px 2px var(--black),
+        0 0 8px rgba(0, 0, 0, 0.8);
       margin: 0 auto;
       text-align: center;
     }
@@ -211,7 +205,7 @@ header {
     font-size: 2.5rem;
     color: var(--accent-color-1);
     margin-bottom: 0.8rem;
-    text-shadow: 3px 3px 0px var(--secondary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     animation: bounce 2s infinite;
   }
 
@@ -255,11 +249,11 @@ header {
         0 5px 15px rgba(0, 0, 0, 0.3),
         0 0 15px rgba(255, 111, 97, 0.5);
       text-shadow:
-        2px 2px 0 var(--accent-color-2),
-        -1px -1px 0 var(--accent-color-2),
-        1px -1px 0 var(--accent-color-2),
-        -1px 1px 0 var(--accent-color-2),
-        0 0 8px rgba(0, 0, 0, 0.5);
+        1px 1px 2px var(--black),
+        -1px -1px 2px var(--black),
+        1px -1px 2px var(--black),
+        -1px 1px 2px var(--black),
+        0 0 8px rgba(0, 0, 0, 0.8);
 
       &::before {
         content: "";
@@ -658,6 +652,17 @@ footer {
   display: none;
 }
 
+/* Hide number input arrows */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 /* Media Queries */
 @media (max-width: 1024px) {
   /* Hero Section */
@@ -717,11 +722,11 @@ footer {
         padding: 5px 0 !important;
         color: var(--white);
         text-shadow:
-          2px 2px 0 var(--accent-color-2),
-          -1px -1px 0 var(--accent-color-2),
-          1px -1px 0 var(--accent-color-2),
-          -1px 1px 0 var(--accent-color-2),
-          0 0 8px rgba(0, 0, 0, 0.5);
+          1px 1px 2px var(--black),
+          -1px -1px 2px var(--black),
+          1px -1px 2px var(--black),
+          -1px 1px 2px var(--black),
+          0 0 8px rgba(0, 0, 0, 0.8);
         margin: 0 auto;
         text-align: center;
       }
@@ -823,6 +828,36 @@ footer {
 
   footer {
     font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  #task div {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+  }
+
+  .result-field {
+    font-size: 1.2rem !important;
+    width: 50px;
+  }
+
+  .btn-check {
+    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .score-container {
+    gap: 1rem;
+  }
+
+  .score {
+    font-size: 1rem;
   }
 }
 
@@ -969,11 +1004,11 @@ dialog {
         0 5px 15px rgba(0, 0, 0, 0.3),
         0 0 15px rgba(255, 111, 97, 0.5);
       text-shadow:
-        2px 2px 0 var(--accent-color-2),
-        -1px -1px 0 var(--accent-color-2),
-        1px -1px 0 var(--accent-color-2),
-        -1px 1px 0 var(--accent-color-2),
-        0 0 8px rgba(0, 0, 0, 0.5);
+        1px 1px 2px var(--black),
+        -1px -1px 2px var(--black),
+        1px -1px 2px var(--black),
+        -1px 1px 2px var(--black),
+        0 0 8px rgba(0, 0, 0, 0.8);
 
       &::before {
         content: "";
@@ -994,4 +1029,3 @@ dialog {
     }
   }
 }
-

@@ -267,4 +267,3 @@ function createHearts() {
 document.addEventListener('DOMContentLoaded', () => {
     loadScores();
 });
-
